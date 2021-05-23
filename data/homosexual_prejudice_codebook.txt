@@ -35,5 +35,5 @@ sexualinvo- Sexual involvement with people of the same sex 1-Yes, 2-No
 
 attraction- Same sex attraction 1- Not attracted, 2 ,3 ,4- rarely attracted, 5, 6 , 7- Often attracted
 
-prejtotal- Total score of prejudice= sum  of scores on prej questions for each participant
+prejtotal- Total score of prejudice from rounded mean of all 10 prejudice questions
 
