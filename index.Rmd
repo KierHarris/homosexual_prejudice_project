@@ -1,0 +1,83 @@
+---
+title: "Homosexual Prejudice"
+author: "K.Harris"
+date: "22/05/2021"
+output: html_document
+---
+
+# Data origin
+The data used in this project comes from study 1 in De Figueiredo & Pereira’s (2021) research titled The Effect of Gender and Male Distinctiveness Threat on Prejudice Against Homosexuals. The overall aim of the research was to show that gender differences in prejudice towards homosexuals are due to males striving more for positive distinctiveness between the genders and consequently using prejudice towards homosexuals as a defence against their potential threat to this.
+
+ The aim of study 1 was to test the hypothesis that “Heterosexual men express more sexual prejudice than heterosexual women, especially against gay men”. This was tested by having heterosexual males and females complete a prejudice scale where they would indicate how uncomfortable they would be in 10 different scenarios with either a gay man or a lesbian e.g., “having a lesbian daughter”. This was measured with a Likert scale ranging from 1-5 with 1 being “Does not bother me at all” and 5 being “Bothers me a lot”. 
+
+# Research question
+The aim of the following visualisation is to provide a graphical answer for the above hypothesis by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
+
+
+# Preparing R packages for visualisation
+```{r, warning=FALSE}
+# you may need to set the working directory to where the data file is saved 
+```
+
+```{r setup, message=FALSE, warning=FALSE}
+#you may need to install the following packages
+#install.packages("here")
+#install.packages("dplyr")
+#install.packages("tidyverse")
+#install.packages("wesanderson")
+
+#load packages
+library(here)
+library(dplyr)
+library(tidyverse)
+library(wesanderson)
+```
+# Prepare data
+```{r, warning=FALSE}
+# Load homosexual prejudice data
+rawdata<-read.csv(here("data","homosexual_prejudice_data.csv"))
+
+#check data
+head(rawdata)
+
+#remove latter participant rows as these participants are not heterosexual and create new data file
+df<-rawdata[-c(233:278), ]
+
+#use factor to label gender values from 0 and 1 to female and male
+gender<-factor(df$gender, levels=c(0,1), labels= c("female", "male"))
+
+#use factor to label experimental condition values from 0 and 1 to lesbians and gay men
+condition<-factor(df$ï..gay.lesbian, levels=c(0,1), labels=c("lesbians", "gay men"))
+
+#assign appropriate names to variables
+prejudice<-df$prejtotal
+
+```
+# Bar chart
+```{r, warning=FALSE}
+#create and present grouped bar chart of males and females mean prejudice scores against gay men and lesbians
+bar<-ggplot(df, 
+                aes(fill=condition, x=gender, y=prejudice))+
+                geom_bar(position = "dodge",stat = "summary", fun="mean", width=0.5)+
+                ggtitle("Male and female mean prejudice scores towards gay men and lesbians")+
+                scale_fill_manual(values=wes_palette(n=3, name = "GrandBudapest2"))+ 
+                theme_bw()
+bar
+
+```
+
+
+
+
+
+# Summary
+The visualisation shows that heterosexual males are distinctly more prejudice towards gay men than heterosexual females are as well as distinctly less prejudice towards lesbians. Heterosexual female’s prejudice towards gay men and lesbians is relatively similar. Regarding the hypothesis, the visualisation shows that the researchers were correct in suggesting that heterosexual males are more prejudice towards gay men than heterosexual females but incorrect in saying that they are more prejudice to homosexuals in general. This is because male’s prejudice scores towards lesbians were much lower than female’s prejudice scores towards both gay men and lesbians. 
+
+Since the raw data from study 1 included data that may impact the participants attitudes towards homosexuality e.g., religion which largely associated with unacceptance and negative attitudes towards homosexuality (Whitley Jr, 2009).  A follow up visualisation could be useful to see if there is a difference in participants prejudice scores towards gay men and lesbians when these factors are controlled for.
+
+# References
+
+De Figueiredo, D., & Pereira, C. (2021). *Gender, male distinctiveness threat and prejudice against homosexuals*. Retrieved on 15th May 2021, from https://osf.io/gsxpe/
+
+ Whitley Jr, B. E. (2009). Religiosity and attitudes toward lesbians and gay men: A meta-analysis. *International Journal for the Psychology of Religion*, 19(1), 21-38. doi.org/10.1080/10508610802471104
+
