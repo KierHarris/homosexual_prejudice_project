@@ -1,0 +1,39 @@
+Variables:
+
+condition- Group targeted by prejudice 0-lesbian, 1-gay men
+
+gender- 0- female, 1-male
+prej1- Having a lesbian/gay man in college workgroup 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej2- Welcome a lesbian/gay man couple in your home 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej3- Having friends who are open homosexuals 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej4-Seeing lesbian/ gay couples dating 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej5- Having a lesbian daughter/ gay son 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej6- Knowing that a close relative is a lesbian/ gay 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej7- Having a lesbian/ gay teacher 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5- Bothers me a lot
+
+prej8- Talking to lesbians/ gay men 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej9- If your daughter/ son had friendships with lesbians/ gay men 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+prej10- Living with assumed lesbians/ gay men 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
+
+maritalstatus- 1-Not Married, 2- Married, 3- Divorced, 4- Other
+
+religion- 1- Catholic, 2- Protestant, 3- Spiritual, 4- Has no religion, 5-other
+
+socialstatus- 1- Low, 2- Medium-low, 3- Medium, 4-Medium-high, 5- High
+
+sexuality- 1-Heterosexual, 2- Homosexual, 3- Bisexual, 4- Other
+
+sexualinvo- Sexual involvement with people of the same sex 1-Yes, 2-No
+
+attraction- Same sex attraction 1- Not attracted, 2 ,3 ,4- rarely attracted, 5, 6 , 7- Often attracted
+
+prejtotal- Total score of prejudice= sum  of scores on prej questions for each participant
+
