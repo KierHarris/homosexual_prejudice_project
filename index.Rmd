@@ -13,6 +13,8 @@ The data used in this project comes from study 1 in De Figueiredo & Pereira’s 
 # Research question
 The aim of the following project is to provide a visualisation to answer the above hypothesis by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
 
+# Repository    
+The code, plots and data files can be found [here](https://github.com/KierHarris/homosexual_prejudice_project)
 
 # Preparing R 
 ```{r, warning=FALSE}
