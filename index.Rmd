@@ -6,15 +6,15 @@ output: html_document
 ---
 
 # Data origin
-The data used in this project comes from study 1 in De Figueiredo & Pereira’s (2021) research titled The effect of gender and male distinctiveness threat on prejudice against homosexuals. The overall aim of the research was to show that gender differences in prejudice towards homosexuals are due to males striving more for positive distinctiveness between the genders and consequently using prejudice towards homosexuals as a defence against their potential threat to this.
+The data used in this project comes from study 1 in De Figueiredo & Pereira’s (2021) research titled "The effect of gender and male distinctiveness threat on prejudice against homosexuals". The overall aim of the research was to show that gender differences in prejudice towards homosexuals are due to males striving more for positive distinctiveness between the genders and consequently using prejudice towards homosexuals as a defence against their potential threat to this.
 
- The aim of study 1 was to test the hypothesis that “Heterosexual men express more sexual prejudice than heterosexual women, especially against gay men”. This was tested by having heterosexual males and females complete a prejudice scale where they would indicate how uncomfortable they would be in 10 different scenarios with either a gay man or a lesbian e.g., “having a lesbian daughter”. This was measured with a Likert scale ranging from 1-5 with 1 being “Does not bother me at all” and 5 being “Bothers me a lot”. 
+ The aim of study 1 was to test the hypothesis that “Heterosexual men express more sexual prejudice than heterosexual women, especially against gay men”. This was tested by having heterosexual males and females complete a prejudice scale where they would indicate how uncomfortable they would be in 10 different scenarios with either a gay man or a lesbian e.g., “having a lesbian daughter”. This was measured with a Likert scale ranging from 1-5 with 1 being “Does not bother me at all” and 5 being “Bothers me a lot”. They received a total prejudice score which was the rounded up mean of their scores on each of the 10 questions.
 
 # Research question
-The aim of the following visualisation is to provide a graphical answer for the above hypothesis by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
+The aim of the following project is to provide a visualisation to answer the above hypothesis by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
 
 
-# Preparing R packages for visualisation
+# Preparing R 
 ```{r, warning=FALSE}
 # you may need to set the working directory to where the data file is saved 
 ```
@@ -32,7 +32,7 @@ library(dplyr)
 library(tidyverse)
 library(wesanderson)
 ```
-# Prepare data
+# Data preperation
 ```{r, warning=FALSE}
 # Load homosexual prejudice data
 rawdata<-read.csv(here("data","homosexual_prejudice_data.csv"))
@@ -40,7 +40,7 @@ rawdata<-read.csv(here("data","homosexual_prejudice_data.csv"))
 #check data
 head(rawdata)
 
-#remove latter participant rows as these participants are not heterosexual and create new data file
+#remove latter participant rows where sexuality scores are >1 as these participants are not heterosexual and create new data file
 df<-rawdata[-c(233:278), ]
 
 #use factor to label gender values from 0 and 1 to female and male
@@ -53,7 +53,7 @@ condition<-factor(df$ï..gay.lesbian, levels=c(0,1), labels=c("lesbians", "gay m
 prejudice<-df$prejtotal
 
 ```
-# Bar chart
+# Visualisation
 ```{r, warning=FALSE}
 #create and present grouped bar chart of males and females mean prejudice scores against gay men and lesbians
 bar<-ggplot(df, 
@@ -65,7 +65,6 @@ bar<-ggplot(df,
 bar
 
 ```
-
 
 
 
