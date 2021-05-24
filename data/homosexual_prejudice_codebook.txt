@@ -1,8 +1,9 @@
 Variables:
 
-condition- Group targeted by prejudice 0-lesbian, 1-gay men
+gay/lesbian- experimental condition where participants were either given a questionnaire about gay men or lesbians- 0- lesbians, 1-gay men
 
 gender- 0- female, 1-male
+
 prej1- Having a lesbian/gay man in college workgroup 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
 
 prej2- Welcome a lesbian/gay man couple in your home 0-Does not bother me at all, 1- Bothers me a little, 3- Does not bother me too much or too little, 4- Bothers me, 5 Bothers me a lot
@@ -37,3 +38,4 @@ attraction- Same sex attraction 1- Not attracted, 2 ,3 ,4- rarely attracted, 5, 
 
 prejtotal- Total score of prejudice from rounded mean of all 10 prejudice questions
 
+The variables used in the visualisation project are: gay/lesbian, gender, sexuality and prej total

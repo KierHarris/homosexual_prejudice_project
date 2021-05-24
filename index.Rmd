@@ -6,15 +6,16 @@ output: html_document
 ---
 
 # Data origin
-The data used in this project comes from study 1 in De Figueiredo & Pereira’s (2021) research titled "The effect of gender and male distinctiveness threat on prejudice against homosexuals". The overall aim of the research was to show that gender differences in prejudice towards homosexuals are due to males striving more for positive distinctiveness between the genders and consequently using prejudice towards homosexuals as a defence against their potential threat to this.
+The data used in this project (homosexual_prejudice_data.csv) was obtained from the Open Science Frame work and comes from study 1 in De Figueiredo & Pereira’s (2021) research titled "The effect of gender and male distinctiveness threat on prejudice against homosexuals". The overall aim of the research was to show that gender differences in prejudice towards homosexuals are due to males striving more for positive distinctiveness between the genders and consequently using prejudice towards homosexuals as a defence against their potential threat to this.
 
- The aim of study 1 was to test the hypothesis that “Heterosexual men express more sexual prejudice than heterosexual women, especially against gay men”. This was tested by having heterosexual males and females complete a prejudice scale where they would indicate how uncomfortable they would be in 10 different scenarios with either a gay man or a lesbian e.g., “having a lesbian daughter”. This was measured with a Likert scale ranging from 1-5 with 1 being “Does not bother me at all” and 5 being “Bothers me a lot”. They received a total prejudice score which was the rounded up mean of their scores on each of the 10 questions.
+ The aim of study 1 was to test the hypothesis that “Heterosexual men express more homosexual prejudice than heterosexual women, especially against gay men”. This was tested by having males and females complete a prejudice scale where they would indicate how uncomfortable they would be in 10 different scenarios with either a gay man or a lesbian depending on which condition they were randomly assigned to e.g., “having a lesbian daughter”. This was measured with a Likert scale ranging from 1-5 with 1 being “Does not bother me at all” and 5 being “Bothers me a lot”. They received a total prejudice score which was the rounded up mean of their scores on each of the 10 questions. 
+ 
 
 # Research question
-The aim of the following project is to provide a visualisation to answer the above hypothesis by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
+The aim of the following project is to provide a visualisation to answer the above hypothesis for study 1 by showing the mean scores of both the male and female participants in relation to their prejudice against gay men and lesbians. 
 
 # Repository    
-The code, plots and data files can be found [here](https://github.com/KierHarris/homosexual_prejudice_project)
+The code, plots and data files used to create this Rmd page can be found [here](https://github.com/KierHarris/homosexual_prejudice_project)
 
 # Preparing R 
 ```{r, warning=FALSE}
@@ -57,13 +58,19 @@ prejudice<-df$prejtotal
 ```
 # Visualisation
 ```{r, warning=FALSE}
-#create and present grouped bar chart of males and females mean prejudice scores against gay men and lesbians
+#assign a name to the plot and let ggplot know which data frame to use
 bar<-ggplot(df, 
+# use fill to assign colours to the bars depending on which condition the participant is in and set x and y axis
                 aes(fill=condition, x=gender, y=prejudice))+
+# use geom_bar to create a bar chart, dodge to seperate males and females to create a grouped bar chart and mean to ensure the mean prejudice scores are included
                 geom_bar(position = "dodge",stat = "summary", fun="mean", width=0.5)+
+#create the bar chart title
                 ggtitle("Male and female mean prejudice scores towards gay men and lesbians")+
+#assign a colour scheme for the bars
                 scale_fill_manual(values=wes_palette(n=3, name = "GrandBudapest2"))+ 
+#set a black and white theme for the axis and back grid 
                 theme_bw()
+#present bar chart
 bar
 
 ```
