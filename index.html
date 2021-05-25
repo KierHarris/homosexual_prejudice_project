@@ -269,7 +269,7 @@ prejudice&lt;-df$prejtotal</code></pre>
 bar&lt;-ggplot(df, 
 # use fill to assign colours to the bars depending on which condition the participant is in and set x and y axis
                 aes(fill=condition, x=gender, y=prejudice))+
-# use geom_bar to create a bar chart, dodge to seperate males and females to create a grouped bar chart and mean to ensure the mean prejudice scores are included
+# use geom_bar to create a bar chart, dodge to seperate males and females by the condition they were in to create a grouped bar chart and mean to ensure the mean prejudice scores are included
                 geom_bar(position = &quot;dodge&quot;,stat = &quot;summary&quot;, fun=&quot;mean&quot;, width=0.5)+
 #create the bar chart title
                 ggtitle(&quot;Male and female mean prejudice scores towards gay men and lesbians&quot;)+
